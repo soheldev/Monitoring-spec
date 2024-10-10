@@ -272,3 +272,18 @@ inhibit_rules:
 ---
 
 This documentation provides a detailed explanation of your Prometheus and Alertmanager configuration files. It covers global settings, alert rules, email notifications, and inhibition rules.
+
+
+### Docker Monitoring 
+docker run -d \
+  --name cadvisor \
+  --network bridge \
+  -p 9091:8080 \
+  -v /:/rootfs \
+  -v /var/run:/var/run \
+  -v /sys:/sys \
+  -v /var/lib/docker/:/var/lib/docker \
+  -v /dev/disk/:/dev/disk \
+  --privileged \
+  --device /dev/kmsg \
+  gcr.io/cadvisor/cadvisor:latest
