@@ -275,6 +275,7 @@ This documentation provides a detailed explanation of your Prometheus and Alertm
 
 
 ### Docker Monitoring 
+```
 docker run -d \
   --name cadvisor \
   --network bridge \
@@ -287,3 +288,4 @@ docker run -d \
   --privileged \
   --device /dev/kmsg \
   gcr.io/cadvisor/cadvisor:latest
+```
